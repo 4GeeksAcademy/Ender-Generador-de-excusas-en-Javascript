@@ -14,12 +14,20 @@ window.onload = () => {
     "during my lunch",
     "while I was praying"
   ];
+
+  function ramdomElement(arr) {
+    return Math.floor(Math.random() * arr.length);
+  }
   // Decloro el string imprimir, en el se guardan todas las partes de la excusa, se usa += para conservar el valor actual y agregar el valor nuevo
   let Imprimir = "";
   // En los pasos siguientes se usa un random para generar la posicion de cada arreglo segun la cantidad de lapabras que tenga y se guarda en imprimir
-  Imprimir += who[Math.floor(Math.random() * 4)]; // El arreglo who en la posicion que genere el random se guarda en imprimir
-  Imprimir += " " + action[Math.floor(Math.random() * 4)]; //El arreglo action en la posicion que genere el random se guarda en imprimir
-  Imprimir += " " + what[Math.floor(Math.random() * 3)]; //El arreglo what en la posicion que genere el random se guarda en imprimir
-  Imprimir += " " + when[Math.floor(Math.random() * 5)]; //El arreglo when en la posicion que genere el random se guarda en imprimir
+  Imprimir =
+    who[ramdomElement(who)] +
+    " " +
+    action[ramdomElement(action)] +
+    " " +
+    what[ramdomElement(what)] +
+    " " +
+    when[ramdomElement(when)];
   document.querySelector("#excuse").innerHTML = Imprimir; // cambia la palabra excuse en el HTML por la excusa generada
 };
